@@ -14,9 +14,6 @@
                 <div class="form-group text-center">
                     <input type="submit" class="btnSubmit" value="Login" />
                 </div>
-                <div class="form-group my-3 text-center">
-                    <a href="#" class="ForgetPwd">Forget Password?</a>
-                </div>
             </form>
         </div>
         <div class="col-md-3"></div>
