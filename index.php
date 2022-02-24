@@ -1,8 +1,7 @@
 <?php
 session_start();
-session_destroy();
 $page = isset($_GET['page']) ? $_GET['page'] : '';
-$permissions = $_SESSION['login'];
+$permissions = $_SESSION['login'] ?? false;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +15,7 @@ $permissions = $_SESSION['login'];
         include 'pages/login/LoginHead.php';
     }
     ?>
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -27,7 +27,8 @@ $permissions = $_SESSION['login'];
         include 'components/Footer.php';
         include 'components/Script.php';
     } else {
-        include 'components/Login.php';
+        session_destroy();
+        include 'pages/login/Login.php';
         include 'pages/login/LoginScript.php';
     }
     ?>
