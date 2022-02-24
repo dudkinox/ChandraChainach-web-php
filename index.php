@@ -24,6 +24,11 @@ $permissions = $_SESSION['login'] ?? false;
         include 'components/Loading.php';
         include 'components/NavBar.php';
         include 'components/Menu.php';
+        switch ($page) {
+            case 'logout':
+                header("services/loginService.php?logout=1");
+                break;
+        }
         include 'components/Footer.php';
         include 'components/Script.php';
     } else {
