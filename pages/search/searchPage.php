@@ -14,34 +14,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Trident</td>
-                    <td>Trident</td>
-                    <td>I</td>
-                    <td>Win 95+</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>Trident</td>
-                    <td>Trident</td>
-                    <td>I</td>
-                    <td>Win 95+</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>Trident</td>
-                    <td>Trident</td>
-                    <td>I</td>
-                    <td>Win 95+</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>Trident</td>
-                    <td>Trident</td>
-                    <td>I</td>
-                    <td>Win 95+</td>
-                    <td>4</td>
-                </tr>
+                <?php
+                $queryAccount = "SELECT * FROM account";
+                $resultAccount = $conn->query($queryAccount);
+                if ($resultAccount->num_rows > 0) {
+                    while ($rowAccount = $resultAccount->fetch_assoc()) {
+                ?>
+                        <tr>
+                            <td><?php echo $rowAccount["id"]; ?></td>
+                            <td><?php echo $rowAccount["name"]; ?></td>
+                            <td><?php echo $rowAccount["lastname"]; ?></td>
+                            <td><?php echo $rowAccount["tel"]; ?></td>
+                            <td><?php echo $rowAccount["major"]; ?></td>
+                            <td><?php echo $rowAccount["ability"]; ?></td>
+                        </tr>
+                <?php }
+                } ?>
             </tbody>
         </table>
     </div>

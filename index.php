@@ -2,6 +2,7 @@
 session_start();
 $page = isset($_GET['page']) ? $_GET['page'] : '';
 $permissions = $_SESSION['login'] ?? false;
+require('http/client.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
