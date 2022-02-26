@@ -22,8 +22,7 @@
                 ?>
                         <tr>
                             <td><?php echo $rowAccount["id"]; ?></td>
-                            <td><?php echo $rowAccount["name"]; ?></td>
-                            <td><?php echo $rowAccount["lastname"]; ?></td>
+                            <td><?php echo $rowAccount["name"] . ' ' . $rowAccount["lastname"]; ?></td>
                             <td><?php echo $rowAccount["tel"]; ?></td>
                             <td><?php echo $rowAccount["major"]; ?></td>
                             <td><?php echo $rowAccount["ability"]; ?></td>
