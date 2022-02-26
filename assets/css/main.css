@@ -1,3 +1,12 @@
 img[alt="www.000webhost.com"] {
   display: none !important;
 }
+[class*="sidebar-dark-"] {
+  background-color: #543564 !important;
+}
+.navbar-white {
+  background-color: #7170c5 !important;
+}
+.content-wrapper {
+  background-color: #7ea0d3 !important;
+}

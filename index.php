@@ -19,19 +19,38 @@ $permissions = $_SESSION['login'] ?? false;
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
-    <?php
-    if ($permissions) {
-        include 'components/Loading.php';
-        include 'components/NavBar.php';
-        include 'components/Menu.php';
-        include 'components/Footer.php';
-        include 'components/Script.php';
-    } else {
-        session_destroy();
-        include 'pages/login/Login.php';
-        include 'pages/login/LoginScript.php';
-    }
-    ?>
+    <div class="wrapper">
+        <?php
+        if ($permissions) {
+            include 'components/Loading.php';
+            include 'components/NavBar.php';
+            include 'components/Menu.php';
+        ?>
+            <div class="content-wrapper">
+                <?php
+                switch ($page) {
+
+                    case 'logout':
+                        header("services/loginService.php?logout=1");
+                        break;
+                    default:
+                        include 'pages/search/searchPage.php';
+                        break;
+                }
+                ?>
+            </div>
+            <?php
+            include 'components/Footer.php';
+            ?>
+    </div>
+<?php
+            include 'components/Script.php';
+        } else {
+            session_destroy();
+            include 'pages/login/Login.php';
+            include 'pages/login/LoginScript.php';
+        }
+?>
 </body>
 
 </html>
