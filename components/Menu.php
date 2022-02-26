@@ -64,7 +64,7 @@ $type = isset($_POST['type']) ? $_POST['type'] : '';
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="?page=logout" class="nav-link">
+                    <a href="services/loginService.php?logout=1" class="nav-link">
                         <img src="https://img.icons8.com/external-sbts2018-lineal-color-sbts2018/30/000000/external-logout-social-media-sbts2018-lineal-color-sbts2018.png" />
                         <p>
                             ออกจากระบบ
