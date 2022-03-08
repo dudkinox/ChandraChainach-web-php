@@ -11,6 +11,7 @@
                     <th>เบอร์โทร</th>
                     <th>สาขาวิชา</th>
                     <th>ความสามารถพิเศษ</th>
+                    <th>activity</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,6 +27,9 @@
                             <td><?php echo $rowAccount["tel"]; ?></td>
                             <td><?php echo $rowAccount["major"]; ?></td>
                             <td><?php echo $rowAccount["ability"]; ?></td>
+                            <td class="text-center">
+                                <button class="btn btn-primary" onclick="showDetail()">แสดงข้อมูล</button>
+                            </td>
                         </tr>
                 <?php }
                 } ?>

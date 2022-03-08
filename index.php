@@ -23,6 +23,7 @@ require('http/client.php');
     <div class="wrapper">
         <?php
         if ($permissions) {
+            include 'components/Modal.php';
             include 'components/Loading.php';
             include 'components/NavBar.php';
             include 'components/Menu.php';

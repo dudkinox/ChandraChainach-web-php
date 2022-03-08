@@ -60,4 +60,8 @@
         //     "responsive": true,
         // });
     });
+
+    function showDetail() {
+        $('#showDetailStudent').modal('show');
+    }
 </script>
