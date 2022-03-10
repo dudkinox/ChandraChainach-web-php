@@ -12,7 +12,7 @@
                     <th>รหัสนักศึกษา</th>
                     <th>ชื่อ สกุล</th>
                     <th>ระดับการศึกษา</th>
-                    <th>activity</th>
+                    <?php if ($permissions) { ?><th>activity</th><?php } ?>
                 </tr>
             </thead>
             <tbody>
@@ -30,9 +30,11 @@
                             <td><?php echo $rowAccount["รหัสนักศึกษา"]; ?></td>
                             <td><?php echo $rowAccount["ชื่อ"] . '  ' . $rowAccount["นามสกุล"]; ?></td>
                             <td><?php echo $rowAccount["ระดับการศึกษา"]; ?></td>
-                            <td class="text-center">
-                                <button class="btn btn-primary" onclick="showDetail()">ดูรูป</button>
-                            </td>
+                            <?php if ($permissions) { ?>
+                                <td class="text-center">
+                                    <button class="btn btn-primary" onclick="showDetail()">ดูรูป</button>
+                                </td>
+                            <?php } ?>
                         </tr>
                 <?php
                         $order++;

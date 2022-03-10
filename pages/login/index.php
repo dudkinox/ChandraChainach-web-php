@@ -1,8 +1,14 @@
+<?php
+session_start();
+include 'LoginHead.php';
+include '../../components/Modal.php';
+
+?>
 <div class="content">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img src="images/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+                <img src="../../images/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
             </div>
             <div class="col-md-6 contents">
                 <div class="row justify-content-center">
@@ -11,7 +17,7 @@
                             <h3>Sign In</h3>
                             <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
                         </div>
-                        <form action="services/loginService.php" method="post">
+                        <form action="../../services/loginService.php" method="post">
                             <div class="form-group first my-3">
                                 <label for="username">Username</label>
                                 <input type="text" class="form-control" name="username" id="username">
@@ -27,7 +33,6 @@
                                     <input type="checkbox" checked="checked" />
                                     <div class="control__indicator"></div>
                                 </label>
-                                <!-- <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> -->
                             </div>
 
                             <input type="submit" value="Log In" class="btn btn-block btn-primary">
@@ -41,3 +46,7 @@
         </div>
     </div>
 </div>
+
+<?php
+include 'LoginScript.php';
+?>

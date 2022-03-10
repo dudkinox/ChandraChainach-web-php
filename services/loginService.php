@@ -18,9 +18,9 @@ if ($logout == '1') {
         $row = $result->fetch_assoc();
         $_SESSION["login"] = true;
         $_SESSION["type"] = $row["type"];
+        header("Location: ../");
     } else {
         $_SESSION["error"] = "1";
+        header("Location: ../pages/login");
     }
-
-    header("Location: ../");
 }
