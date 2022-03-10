@@ -7,31 +7,36 @@
             <thead>
                 <tr>
                     <th>ลำดับ</th>
+                    <th>คณะ</th>
+                    <th>ปีการศึกษา</th>
+                    <th>รหัสนักศึกษา</th>
                     <th>ชื่อ สกุล</th>
-                    <th>เบอร์โทร</th>
-                    <th>สาขาวิชา</th>
-                    <th>ความสามารถพิเศษ</th>
+                    <th>ระดับการศึกษา</th>
                     <th>activity</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                $queryAccount = "SELECT * FROM account";
+                $queryAccount = "SELECT * FROM student";
                 $resultAccount = $conn->query($queryAccount);
                 if ($resultAccount->num_rows > 0) {
+                    $order = 1;
                     while ($rowAccount = $resultAccount->fetch_assoc()) {
                 ?>
                         <tr>
-                            <td><?php echo $rowAccount["id"]; ?></td>
-                            <td><?php echo $rowAccount["name"] . ' ' . $rowAccount["lastname"]; ?></td>
-                            <td><?php echo $rowAccount["tel"]; ?></td>
-                            <td><?php echo $rowAccount["major"]; ?></td>
-                            <td><?php echo $rowAccount["ability"]; ?></td>
+                            <td><?php echo $order; ?></td>
+                            <td><?php echo $rowAccount["คณะ"]; ?></td>
+                            <td><?php echo $rowAccount["ปีการศึกษา"]; ?></td>
+                            <td><?php echo $rowAccount["รหัสนักศึกษา"]; ?></td>
+                            <td><?php echo $rowAccount["ชื่อ"] . '  ' . $rowAccount["นามสกุล"]; ?></td>
+                            <td><?php echo $rowAccount["ระดับการศึกษา"]; ?></td>
                             <td class="text-center">
-                                <button class="btn btn-primary" onclick="showDetail()">แสดงข้อมูล</button>
+                                <button class="btn btn-primary" onclick="showDetail()">ดูรูป</button>
                             </td>
                         </tr>
-                <?php }
+                <?php
+                        $order++;
+                    }
                 } ?>
             </tbody>
         </table>
