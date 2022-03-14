@@ -21,7 +21,7 @@ require('http/client.php');
     <?php
     if ($login == '1') {
         session_destroy();
-        header('Location: pages/login');
+        echo '<script>window.location.href = "pages/login"</script>';
     }
 
     ?>
