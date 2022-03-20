@@ -3,6 +3,7 @@ session_start();
 $page = isset($_GET['page']) ? $_GET['page'] : '';
 $permissions = $_SESSION['login'] ?? false;
 $login = isset($_GET['login']) ? $_GET['login'] : '0';
+$idStudent = isset($_GET['idStudent']) ? $_GET['idStudent'] : '';
 require('http/client.php');
 ?>
 <!DOCTYPE html>
@@ -12,7 +13,6 @@ require('http/client.php');
     <title>โปรไฟล์รุ่นการอบรมของเกษรกรและวิสาหกิจชุมชน</title>
     <?php
     include 'components/Head.php';
-
     ?>
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -28,14 +28,15 @@ require('http/client.php');
     <div class="wrapper">
         <?php
         include 'components/Modal.php';
-        include 'components/Loading.php';
+        if ($idStudent == '') {
+            include 'components/Loading.php';
+        }
         include 'components/NavBar.php';
         include 'components/Menu.php';
         ?>
         <div class="content-wrapper">
             <?php
             switch ($page) {
-
                 case 'logout':
                     header("services/loginService.php?logout=1");
                     break;

@@ -59,9 +59,23 @@
         //     "autoWidth": false,
         //     "responsive": true,
         // });
+
     });
 
-    function showDetail() {
-        $('#showDetailStudent').modal('show');
+    <?php if (isset($_SESSION["alertInsertDetail"])) { ?>
+        $('#success-insert-detail').modal('show');
+    <?php
+        unset($_SESSION["alertInsertDetail"]);
     }
+    ?>
+
+    function showDetail(idStudent) {
+        window.location.href = "?idStudent=" + idStudent;
+    }
+    <?php
+    if ($idStudent != '') {
+    ?>
+        $('#showDetailStudent').modal('show');
+        document.getElementById("id-student").value = idStudent;
+    <?php  } ?>
 </script>

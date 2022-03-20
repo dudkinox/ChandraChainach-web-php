@@ -32,7 +32,7 @@
                             <td><?php echo $rowAccount["ระดับการศึกษา"]; ?></td>
                             <?php if ($permissions) { ?>
                                 <td class="text-center">
-                                    <button class="btn btn-primary" onclick="showDetail()">ดูรูป</button>
+                                    <button class="btn btn-primary" onclick="showDetail(`<?php echo $rowAccount['รหัสนักศึกษา']; ?>`)">จัดการข้อมูล</button>
                                 </td>
                             <?php } ?>
                         </tr>
