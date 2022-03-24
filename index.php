@@ -35,16 +35,20 @@ require('http/client.php');
         include 'components/Menu.php';
         ?>
         <div class="content-wrapper">
-            <?php
-            switch ($page) {
-                case 'logout':
-                    header("services/loginService.php?logout=1");
-                    break;
-                default:
-                    include 'pages/search/searchPage.php';
-                    break;
-            }
-            ?>
+            <section class="content">
+                <div class="container-fluid">
+                    <?php
+                    switch ($page) {
+                        case 'logout':
+                            header("services/loginService.php?logout=1");
+                            break;
+                        default:
+                            include 'pages/search/searchPage.php';
+                            break;
+                    }
+                    ?>
+                </div>
+            </section>
         </div>
         <?php
         include 'components/Footer.php';

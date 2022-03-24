@@ -13,3 +13,10 @@ img[alt="www.000webhost.com"] {
 .disclaimer {
   display: none;
 }
+input.form-control.form-control-sm {
+  width: 890px !important;
+  align-items: center !important;
+}
+.form-control::-webkit-input-placeholder {
+  color: rgb(255, 255, 255);
+}
