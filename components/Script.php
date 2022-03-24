@@ -67,8 +67,8 @@
     }
     ?>
 
-    function showDetail(idStudent) {
-        window.location.href = "?idStudent=" + idStudent;
+    function showDetail(idStudent, search) {
+        window.location.href = "?idStudent=" + idStudent + "&search=" + search;
     }
     <?php
     if ($idStudent != '') {
