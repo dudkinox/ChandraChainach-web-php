@@ -42,6 +42,9 @@ require('http/client.php');
                         case 'logout':
                             header("services/loginService.php?logout=1");
                             break;
+                        case 'add-student':
+                            include 'pages/addStudent/addStudent.php';
+                            break;
                         default:
                             include 'pages/search/searchPage.php';
                             break;

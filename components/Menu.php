@@ -12,13 +12,23 @@ $type = $_SESSION["type"] ?? 'Genaral';
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="?page=home" class="nav-link">
                         <img src="https://img.icons8.com/color/30/000000/web.png" />
                         <p>
                             หน้าแรก
                         </p>
                     </a>
                 </li>
+                <?php if ($permissions) { ?>
+                    <li class="nav-item">
+                        <a href="?page=add-student" class="nav-link">
+                            <img src="https://img.icons8.com/office/30/000000/add--v1.png" />
+                            <p>
+                                เพิ่มข้อมูลนักศึกษา
+                            </p>
+                        </a>
+                    </li>
+                <?php } ?>
                 <li class="nav-item">
                     <a href="https://chainat.chandra.ac.th/" target="_blank" class="nav-link">
                         <img src="https://img.icons8.com/color/30/000000/domain--v1.png" />

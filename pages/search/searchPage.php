@@ -33,24 +33,25 @@
                 $search = isset($_GET['search']) ? $_GET['search'] : '';
                 if (isset($_POST["search-guitar"]) || $search != '') {
                     $search = $_POST["search-guitar"] ?? $search;
-                    $queryAccount = "SELECT * FROM student WHERE `รหัสนักศึกษา` = '" . $search . "' OR `ชื่อ` LIKE '%" . $search . "%' OR `นามสกุล` LIKE '%" . $search . "%'";
+                    $queryAccount = "SELECT * FROM student WHERE `รหัสนักศึกษา` = '" . $search . "' OR `ชื่อ` LIKE '%" . $search . "%' OR `นามสกุล` LIKE '%" . $search . "%' OR `ปีการศึกษา` LIKE '%" . $search . "%'";
                     $resultAccount = $conn->query($queryAccount);
                     if ($resultAccount->num_rows > 0) {
-                        $rowAccount = $resultAccount->fetch_assoc();
+                        while ($rowAccount = $resultAccount->fetch_assoc()) {
                 ?>
-                        <tr>
-                            <td><?php echo $rowAccount["คณะ"]; ?></td>
-                            <td><?php echo $rowAccount["ปีการศึกษา"]; ?></td>
-                            <td><?php echo $rowAccount["รหัสนักศึกษา"]; ?></td>
-                            <td><?php echo $rowAccount["ชื่อ"] . '  ' . $rowAccount["นามสกุล"]; ?></td>
-                            <td><?php echo $rowAccount["ระดับการศึกษา"]; ?></td>
-                            <?php if ($permissions) { ?>
-                                <td class="text-center">
-                                    <button class="btn btn-primary" onclick="showDetail(`<?php echo $rowAccount['รหัสนักศึกษา']; ?>`, `<?php echo $search; ?>`)">จัดการข้อมูล</button>
-                                </td>
-                            <?php } ?>
-                        </tr>
+                            <tr>
+                                <td><?php echo $rowAccount["คณะ"]; ?></td>
+                                <td><?php echo $rowAccount["ปีการศึกษา"]; ?></td>
+                                <td><?php echo $rowAccount["รหัสนักศึกษา"]; ?></td>
+                                <td><?php echo $rowAccount["ชื่อ"] . '  ' . $rowAccount["นามสกุล"]; ?></td>
+                                <td><?php echo $rowAccount["ระดับการศึกษา"]; ?></td>
+                                <?php if ($permissions) { ?>
+                                    <td class="text-center">
+                                        <button class="btn btn-primary" onclick="showDetail(`<?php echo $rowAccount['รหัสนักศึกษา']; ?>`, `<?php echo $search; ?>`)">จัดการข้อมูล</button>
+                                    </td>
+                                <?php } ?>
+                            </tr>
                 <?php
+                        }
                     }
                 } ?>
             </tbody>
